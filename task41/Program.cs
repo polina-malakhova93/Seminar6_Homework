@@ -1,7 +1,7 @@
 ﻿Console.Write("Введите числа через запятую: ");
-string?input = Console.ReadLine();
+string? input = Console.ReadLine();
 int countNum = 1;
-for (int i = 0; i < input.Length; i++)
+for(int i = 0; i < input.Length; i++)
 {
     if (input[i] == ',')
     {
@@ -16,7 +16,7 @@ for (int i = 0; i < input.Length; i++)
     string temp = "";
     while (input[i] != ',')
     {
-        if (i != input.Length - 1)
+        if(i != input.Length - 1)
         {
             temp += input[i].ToString();
             i++;
@@ -31,11 +31,15 @@ for (int i = 0; i < input.Length; i++)
     index++;
 }
 PrintArray(numbers);
-
-
-
-
-
+int countPositive = 0;
+for (int i = 0; i < numbers.Length; i++)
+{
+    if (numbers[i] > 0)
+    {
+        countPositive++;
+    }
+}
+Console.WriteLine($"Количество положительных элементов: {countPositive}");
 
 
 void PrintArray(int[] array)
